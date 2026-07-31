@@ -1,0 +1,231 @@
+/* Sidebar Container Base Setup */
+#discord-ts-sidebar-container {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-primary, "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif);
+}
+
+/* Slide States */
+#discord-ts-sidebar-container.ts-sidebar-collapsed {
+  transform: translate(280px, -50%);
+}
+
+#discord-ts-sidebar-container.ts-sidebar-expanded {
+  transform: translate(0, -50%);
+}
+
+/* Toggle Arrow Button */
+#ts-sidebar-toggle {
+  background-color: #2b2d31;
+  color: #dbdee1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: none;
+  width: 32px;
+  height: 48px;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#ts-sidebar-toggle:hover {
+  background-color: #313338;
+  color: #ffffff;
+}
+
+#ts-toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Sidebar Body Panel */
+.ts-sidebar-content {
+  width: 280px;
+  background-color: #2b2d31;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  padding: 16px;
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+/* Nav Tabs */
+.ts-nav-tabs {
+  display: flex;
+  background-color: #1e1f22;
+  border-radius: 6px;
+  padding: 3px;
+  margin-bottom: 14px;
+  gap: 2px;
+}
+
+.ts-tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #949ba4;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-align: center;
+}
+
+.ts-tab-btn.active {
+  background-color: #35373c;
+  color: #ffffff;
+}
+
+.ts-tab-btn:hover:not(.active) {
+  color: #dbdee1;
+}
+
+.ts-tab-content {
+  display: none;
+}
+
+.ts-tab-content.active {
+  display: block;
+}
+
+.ts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 14px;
+}
+
+.ts-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f2f5f8;
+}
+
+/* Form Fields */
+.ts-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.ts-field label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #949ba4;
+}
+
+.ts-field input,
+.ts-field select {
+  background-color: #1e1f22;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 8px 10px;
+  color: #dbdee1;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.ts-field input:focus,
+.ts-field select:focus {
+  border-color: #5865f2;
+}
+
+.ts-field input[readonly] {
+  color: #00a8fc;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+/* Color Picker Input Styling */
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-picker-wrapper input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  width: 42px;
+  height: 38px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+
+.color-picker-wrapper input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker-wrapper input[type="color"]::-webkit-color-swatch {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+
+#color-preview-box {
+  flex: 1;
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+/* Action Buttons */
+.ts-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.ts-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.17s ease;
+  width: 100%;
+}
+
+.ts-btn.primary {
+  background-color: #5865f2;
+  color: #ffffff;
+}
+
+.ts-btn.primary:hover {
+  background-color: #4752c4;
+}
+
+.ts-btn.secondary {
+  background-color: #4e5058;
+  color: #ffffff;
+}
+
+.ts-btn.secondary:hover {
+  background-color: #6d6f78;
+}

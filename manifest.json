@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Discord Utilities Sidebar",
+  "version": "1.2",
+  "description": "Adds a floating sidebar to Discord Web with Timestamps, Color Picker, and Text Formatting tools.",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://discord.com/*",
+        "https://ptb.discord.com/*",
+        "https://canary.discord.com/*"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
