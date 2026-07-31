@@ -34,14 +34,3 @@ Since this extension is currently loaded manually, follow these simple steps to 
    - Click the **Load unpacked** button in the top-left corner.
    - Select the extracted folder containing `manifest.json` and project files.
 
----
-
-## 📁 Repository Structure
-
-```text
-├── icon.svg            # Extension & brand logo
-├── github.svg          # GitHub icon
-├── index.html          # Extension landing page
-├── tos.html            # Terms of Service page
-├── manifest.json       # Browser extension manifest
-└── README.md           # Project documentation
